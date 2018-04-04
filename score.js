@@ -1,0 +1,35 @@
+const jsonBody = require("body/json");
+var scores = [{name: "Edwin", score: 50}, {name: "David", score: 39}];
+
+const textBody = require("body");
+
+var resources = {"/IP": "Internet Protocol", "/TCP": "Transmission Control Protocol", "/body": "body/json"};
+
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+    var body;
+      if(req.url !== "/scores"){
+        res.statusCode = 404;
+      } else {
+        if(req.method === "GET") {
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/javascript');      
+          body = JSON.stringify(scores);
+      } else {
+        if(req.method === "POST") {
+          // req.body;
+          // console.log(req.body);
+      }
+    }
+  }
+    res.end(body);  
+  });
+
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
