@@ -29,11 +29,11 @@ const server = http.createServer((req, res) => {
           })   
         }
        
-  //   res.end(body);
-  //   console.log(scores);
-  //   console.log(req.url);
-  //   console.log(req.method); 
-  // });
+    res.end(body);
+    console.log(scores);
+    console.log(req.url);
+    console.log(req.method); 
+  });
 
 
 server.listen(port, hostname, () => {
