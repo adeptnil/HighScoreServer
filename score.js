@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
       } else {
           res.statusCode = 200;
           res.setHeader('Content-Type', 'application/javascript');      
-          scores.sort((a, b)) => (b.score - a.score);
+          scores.sort((a, b) => (b.score - a.score));
           topScores = scores.slice(0,3);
           body = JSON.stringify(topScores);
       }
